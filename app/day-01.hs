@@ -1,9 +1,10 @@
 parseLine :: String -> Int
-parseLine ('L':n) = -read n
-parseLine ('R':n) = read n
+parseLine ('L' : n) = -read n
+parseLine ('R' : n) = read n
+parseLine _ = error "Invalid input"
 
 parse :: String -> [Int]
-parse =  map parseLine . lines
+parse = map parseLine . lines
 
 rotate :: Int -> Int -> Int
 rotate position delta = (position + delta) `mod` 100
@@ -21,7 +22,6 @@ solve xs = (part1, part2)
 
     -- Expand rotation out into individual ticks before counting
     part2 = countZeros $ concatMap intoTicks xs
-
 
 main :: IO ()
 main = interact (show . solve . parse)
