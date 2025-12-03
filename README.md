@@ -2,6 +2,8 @@
 
 AoC in Haskell. I do not know Haskell.
 
+Example:
+
 ```bash
-runhaskell src/day-01.hs < input.txt
+cabal run day-01 < input.txt
 ```
